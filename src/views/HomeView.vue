@@ -8,7 +8,7 @@
           perferendis possimus qui, quod.
         </p>
       </div>
-      <div class="order-1 order-md-2 col-12 col-md-4 col-lg-3 col-xl-2 my-5 m-md-0 align-self-end align-self-md-center pe-lg-0">
+      <div class="order-1 order-md-2 col-12 col-md-4 col-lg-3 col-xl-2 my-4 m-md-0 align-self-end align-self-md-center pe-lg-0">
         <img
           id="me"
           src="../assets/img/avatar.jpg"

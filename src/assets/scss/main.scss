@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: $font-family-sans-serif;
 }
 
 :focus {
@@ -18,11 +19,11 @@ ul {
 }
 
 a {
-  color: $white;
+  color: $sw-yellow;
   text-decoration: none;
 
   &:hover {
-    color: $white;
+    color: $sw-yellow;
     text-decoration: underline;
   }
 }

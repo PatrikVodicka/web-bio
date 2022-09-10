@@ -12,6 +12,16 @@ import { RouterLink } from 'vue-router'
 </template>
 
 <style scoped lang="scss">
+a {
+  color: $white;
+  text-decoration: none;
+
+  &:hover {
+    color: $white;
+    text-decoration: underline;
+  }
+}
+
 .menu {
   user-select: none;
   text-align: center;
