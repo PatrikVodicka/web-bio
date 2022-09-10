@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 :focus {
   outline: none;
 }
@@ -25,4 +29,11 @@ a {
 
 #app {
   animation: fadeIn 1s ease-out forwards;
+}
+
+.wrapper-full-height {
+    height: 100vh;
+    padding-top: $nav-height;
+    padding-bottom: $nav-height;
+    margin-top: -$nav-height;
 }
