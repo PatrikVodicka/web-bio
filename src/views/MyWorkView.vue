@@ -6,39 +6,129 @@ import Usetreno from '@/assets/img/logo/usetreno.svg'
 <template>
   <main class="container d-flex align-items-center flex-column mt-md-5">
     <article class="row col-10">
-      <Kosik
-        class="col-8 col-md align-self-start mx-auto my-3"
-      />
+      <div
+        class="col-8 col-md align-self-start mx-auto my-3 text-end"
+      >
+        <a
+          href="//kosik.cz"
+          target="_blank"
+        >
+          <Kosik />
+        </a>
+        <i>Online grocery store.<br>2/2020 - 8/2022</i>
+      </div>
       <div class="col-12 col-md-8 col-lg-9">
-        <p class="mt-0">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate eos incidunt magnam temporibus!
-          Architecto asperiores at autem deleniti eligendi eum fuga illo illum labore laudantium magnam magni mollitia nobis
-          numquam possimus quaerat qui quibusdam recusandae repellat similique vero, voluptates, voluptatibus. Commodi,
-          culpa cumque dolore eum quas quidem rem ullam unde.
-        </p>
+        <i>
+          I designed & built the new Kosik SPA FE architecture using VueJS,
+          managed JIRA dashboards & engineer hiring interviews and last but not
+          least, I mentor, guide and support new team members.
+        </i>
+
+        <h4>Tech stack</h4>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate eos incidunt magnam temporibus!
-          Architecto asperiores at autem deleniti eligendi eum fuga illo illum labore laudantium magnam magni mollitia nobis
-          numquam possimus quaerat qui quibusdam recusandae repellat similique vero, voluptates, voluptatibus. Commodi,
-          culpa cumque dolore eum quas quidem rem ullam unde.
+          Docker, MongoDB, Php7, Nette/Latte, NodeJS, jQuery, VueJS 2.6 → 3,
+          Typescript, JS ES6+, Testcafe → Cypress, Jest → Vitest, Storybook,
+          Figma, AdobeXD, Inkscape, JIRA + Confluence
+        </p>
+
+        <h4>Project examples</h4>
+
+        <h5 class="m-0">Order tracking</h5>
+        <p class="mt-0 ms-3">
+          To help customers know when and where they can expect their order<br>we create in-house solution using <a href="//leafletjs.com/" target="_blank">leafletjs</a>
+        </p>
+
+        <h5 class="m-0">Upgrade from MVC to SPA</h5>
+        <p class="mt-0 ms-3">
+          Nette/Latte/jQuery → VueJS/REST
+        </p>
+
+        <h5 class="m-0">Vue ecosystem upgrade</h5>
+        <ol class="mt-0 ms-2 ps-4">
+          <li>
+            VueJS 2.6 w/ webpack 5
+          </li>
+          <li>
+            VueJS 2.6 w/ Vue CLI
+          </li>
+          <li>
+            VueJS 3 w/ Vite
+          </li>
+        </ol>
+
+        <h5 class="m-0">Multilanguage grocery ecommerce web app</h5>
+        <ul class="mt-0 ms-2 ps-4">
+          <li>
+            Implementation Vue I18n
+          </li>
+          <li>
+            Assets configuration for each domain
+            <br>
+            (NodeJS pre-build process)
+          </li>
+        </ul>
+
+        <h5 class="m-0">Storybook documentation</h5>
+        <p class="mt-0 ms-3">
+          ReactJS tool for standalone components documentation to improve cooperation with UX designers.
+        </p>
+
+        <h5 class="m-0">Unit tests</h5>
+        <p class="mt-0 ms-3">
+          Jest → Vitest
+        </p>
+
+        <h5 class="m-0">E2E automatic testing</h5>
+        <p class="mt-0 ms-3">
+          Testcafe → Cypress
         </p>
       </div>
     </article>
     <article class="row col-10">
-      <Usetreno
-        class="col-8 col-md align-self-start mx-auto my-3"
-      />
+      <div
+        class="col-8 col-md align-self-start mx-auto my-3 text-end"
+      >
+        <a
+          href="//usetreno.cz"
+          target="_blank"
+        >
+          <Usetreno
+            class="mb-2"
+          />
+        </a>
+        <i>Online comparator for energy products, loans, mortgages, mobile tariffs and much more.<br>9/2017 - 8/2019</i>
+      </div>
       <div class="col-12 col-md-8 col-lg-9">
-        <p class="mt-0">
-          I mainly redesigned and updated <a href="//usetreno.cz" target="_blank">Ušetřeno.cz</a> portal from jQuery based FE to Vue.js, but participated on many other fronts.
+        <i>
+          I was part of a small but very dedicated team where everybody aside of their main focus was flexible enough to
+          solve issues from different areas. I mainly focus on FE, but I also design UI, manage JIRA dashboard and help
+          BE engineers with some parts of their issues.
+        </i>
+
+        <h4>Tech stack</h4>
+        <p>
+          Docker, MySQL, Php7, Symfony, JS ES6+, jQuery → VueJS 2.6, Bootstrap4, Avocode, Photoshop, AdobeXD, JIRA
         </p>
 
-        <p>Such as keeping CMS system updated and as flexible as possible and CRM system more UX friendly to
-          help CC operators do their job more efficiently.</p>
+        <h4>Project examples</h4>
 
-        <p>I also created and maintained related microsites</p>
+        <h5 class="m-0">Rebrand & upgrade usetreno.cz</h5>
+        <ul class="mt-0 ms-2 ps-4">
+          <li>
+            complete design change
+          </li>
+          <li>
+            FE architecture upgrade
+            <br>
+            MVC Symfony/Twig/jQuery → SPA VueJS/REST
+          </li>
+        </ul>
 
-        <ul>
+        <h5 class="m-0">Design & development VIP clients microsites</h5>
+        <p class="my-0 ms-3">
+          (mostly MVC model Symfony/Twig/jQuery)
+        </p>
+        <ul class="list-plain ms-3">
           <li>
             <a
               href="//www.elektrina.cz"
@@ -97,6 +187,11 @@ import Usetreno from '@/assets/img/logo/usetreno.svg'
             </a>
           </li>
         </ul>
+
+        <h5 class="m-0">External project for fast and easy loan comparison</h5>
+        <p class="mt-0 ms-3">
+          (model SPA VueJS/REST)
+        </p>
       </div>
     </article>
   </main>
