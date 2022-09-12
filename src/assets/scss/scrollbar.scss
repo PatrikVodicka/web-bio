@@ -1,0 +1,35 @@
+$scrollbar-width: 10px;
+$scrollbar-color-primary: $sw-yellow;
+$scrollbar-color-secondary: $sw-blue;
+$scrollbar-bg: $scrollbar-color-secondary $scrollbar-color-primary;
+
+$chrome-bg-vertical: transparent linear-gradient(transparent 0%, transparentize($scrollbar-color-secondary, .3) 15%, transparentize($scrollbar-color-secondary, .3) 85%, transparent 100%);
+$chrome-bg-horizontal: transparent linear-gradient(90deg, transparent 0%, transparentize($scrollbar-color-secondary, .3) 15%, transparentize($scrollbar-color-secondary, .3) 85%, transparent 100%);
+
+html {
+  scrollbar-color: $scrollbar-bg;
+  scrollbar-width: $scrollbar-width;
+}
+
+::-webkit-scrollbar {
+  width: $scrollbar-width;
+
+  &-thumb {
+    &:vertical {
+      background: $chrome-bg-vertical;
+    }
+
+    &:horizontal {
+      background: $chrome-bg-horizontal;
+    }
+  }
+
+  &-track {
+    background: transparent;
+    box-shadow: inset 0 0 4px $scrollbar-color-primary;
+  }
+
+  &-corner {
+    background: transparent linear-gradient(315deg, transparent 0%, transparent 20%, $scrollbar-color-primary 100%);
+  }
+}

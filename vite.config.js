@@ -21,9 +21,9 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         additionalData: `
-          @import "./src/assets/scss/variables";
           @import "bootstrap/scss/functions";
           @import "bootstrap/scss/variables";
+          @import "./src/assets/scss/variables";
           @import "./src/assets/scss/animations";
           @import "bootstrap/scss/maps";
           @import "bootstrap/scss/mixins";
@@ -33,6 +33,7 @@ export default defineConfig({
           @import "bootstrap/scss/grid";
           @import "bootstrap/scss/utilities";
           @import "bootstrap/scss/utilities/api";
+          @import "./src/assets/scss/scrollbar";
         `
       },
     },
