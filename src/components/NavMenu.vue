@@ -22,8 +22,11 @@ a {
 }
 
 .menu {
+  position: absolute;
+  inset: 0 0 100% 0;
   user-select: none;
   text-align: center;
+  z-index: $nav-zix;
 
   > * {
     position: relative;

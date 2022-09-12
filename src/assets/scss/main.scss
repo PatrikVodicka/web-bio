@@ -30,11 +30,15 @@ a {
 
 #app {
   animation: fadeIn 1s ease-out forwards;
+  z-index: $content-zix;
 }
 
 .wrapper-full-height {
-    height: 100vh;
-    padding-top: $nav-height;
-    padding-bottom: $nav-height;
-    margin-top: -$nav-height;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  height: 100%;
+  padding-top: $nav-height;
+  padding-bottom: $nav-height;
 }

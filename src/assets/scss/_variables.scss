@@ -1,3 +1,8 @@
+//---- Z-INDEX
+$zix-base: 0;
+$zix-above: 1;
+$zix-below: -1;
+
 //---- COLORS
 $sw-blue: #1B7DEB;
 $sw-yellow: #ff6;
@@ -7,4 +12,7 @@ $black: #000;
 $white: #fff;
 
 //---- LAYOUT
+$content-zix: $zix-base;
+
 $nav-height: 44px;
+$nav-zix: $zix-above + $content-zix;
