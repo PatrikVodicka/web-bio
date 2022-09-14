@@ -1,15 +1,34 @@
 <script setup>
+import HTML from '@/assets/img/logo/tech/html.svg?skipsvgo'
+import CSS from '@/assets/img/logo/tech/css.svg?skipsvgo'
+import Javascript from '@/assets/img/logo/tech/javascript.svg?skipsvgo'
+import VueJS from '@/assets/img/logo/tech/vuejs.svg?skipsvgo'
+import Webpack from '@/assets/img/logo/tech/webpack.svg?skipsvgo'
+import Vite from '@/assets/img/logo/tech/vite.svg?skipsvgo'
+import NodeJS from '@/assets/img/logo/tech/nodejs.svg?skipsvgo'
+
 import CV from '@/assets/img/icon/CV.svg'
 </script>
 
 <template>
   <main class="container-fluid wrapper-full-height">
     <div class="row justify-content-center align-items-md-center text-center">
-      <div class="order-2 order-md-1 col-12 col-md-8 col-lg-7 col-xl-5 text-md-end">
-        <h1 class="my-2">Patrik Vodička</h1>
+      <div class="position-relative order-2 order-md-1 col-12 col-md-8 col-lg-7 col-xl-5 text-md-end">
+        <h1 class="my-2">Hello there! I'm Patrik Vodička</h1>
         <i class="d-block my-2">
-          Frontend web developer
+          I specialize in web design and development. Love to work in a team where I can share my knowledge with others in following technologies.
         </i>
+        <div
+          class="wrapper-tech-logos"
+        >
+          <HTML />
+          <CSS />
+          <Javascript />
+          <VueJS />
+          <Webpack />
+          <Vite />
+          <NodeJS />
+        </div>
         <a
           class="cv-link"
           href="/CV_Patrik_Vodicka.pdf"
@@ -37,9 +56,21 @@ main {
   animation: fadeIn 1s ease-out forwards;
 }
 
+.wrapper-tech-logos {
+  > * {
+    height: 35px;
+    margin-left: 15px;
+  }
+}
+
 .cv-link {
   opacity: 0;
   animation: fadeIn 1s 3s ease-out forwards;
+
+  @include media-breakpoint-up(md) {
+    position: absolute;
+    right: 12px;
+  }
 
   &__icon {
     $size: 50px;

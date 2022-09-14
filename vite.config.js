@@ -1,7 +1,7 @@
 import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import svgLoader from 'vite-svg-loader'
+import viteSvgLoader from 'vite-svg-loader'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 
 const sourcePath = fileURLToPath(new URL('./src', import.meta.url))
@@ -9,7 +9,7 @@ const sourcePath = fileURLToPath(new URL('./src', import.meta.url))
 export default defineConfig({
   plugins: [
     vue(),
-    svgLoader(),
+    viteSvgLoader(),
     vueJsx()
   ],
   resolve: {
