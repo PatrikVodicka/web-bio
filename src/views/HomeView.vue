@@ -30,7 +30,7 @@ import CV from '@/assets/img/icon/CV.svg'
           <NodeJS />
         </div>
         <a
-          class="cv-link"
+          class="cv-link mt-3"
           href="/CV_Patrik_Vodicka.pdf"
           target="_blank"
         >
@@ -42,7 +42,7 @@ import CV from '@/assets/img/icon/CV.svg'
       <div class="order-1 order-md-2 col-12 col-md-4 col-lg-3 col-xl-2 my-4 m-md-0 align-self-end align-self-md-center pe-lg-0">
         <img
           class="avatar"
-          src="../assets/img/avatar.jpg"
+          src="/avatar.jpg"
           alt="Patrik Vodička"
         >
       </div>
@@ -64,6 +64,7 @@ main {
 }
 
 .cv-link {
+  display: inline-block;
   opacity: 0;
   animation: fadeIn 1s 3s ease-out forwards;
 

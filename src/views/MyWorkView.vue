@@ -117,8 +117,8 @@ import Usetreno from '@/assets/img/logo/usetreno.svg'
       <div class="col-12 col-md-8 col-lg-9">
         <i>
           I was part of a small but very dedicated team where everybody aside of their main focus was flexible enough to
-          solve issues from different areas. I mainly focus on FE, but I also design UI, manage JIRA dashboard and help
-          BE engineers with some parts of their issues.
+          solve issues from different areas. I was mainly focused on FE, but I also designed UI, managed JIRA dashboard
+          and helped BE engineers with some parts of their issues.
         </i>
 
         <h4 class="mb-1">Tech stack</h4>
