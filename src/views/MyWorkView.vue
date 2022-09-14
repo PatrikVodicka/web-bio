@@ -6,7 +6,7 @@ import Usetreno from '@/assets/img/logo/usetreno.svg'
 
 <template>
   <main class="container wrapper-full-height align-items-center">
-    <article class="row col-10">
+    <article class="row col-10 mt-3">
       <div
         class="col-8 col-md align-self-start mx-auto my-3 text-end"
       >
@@ -25,14 +25,14 @@ import Usetreno from '@/assets/img/logo/usetreno.svg'
           least, I mentor, guide and support new team members.
         </i>
 
-        <h4>Tech stack</h4>
-        <p>
+        <h4 class="mb-1">Tech stack</h4>
+        <p class="my-0">
           Docker, MongoDB, Php7, Nette/Latte, NodeJS, jQuery, VueJS 2.6 → 3,
           Typescript, JS ES6+, Testcafe → Cypress, Jest → Vitest, Storybook,
           Figma, AdobeXD, Inkscape, JIRA + Confluence
         </p>
 
-        <h4>
+        <h4 class="mb-1">
           <a
             href="#"
             type="button"
@@ -121,12 +121,12 @@ import Usetreno from '@/assets/img/logo/usetreno.svg'
           BE engineers with some parts of their issues.
         </i>
 
-        <h4>Tech stack</h4>
-        <p>
+        <h4 class="mb-1">Tech stack</h4>
+        <p class="my-0">
           Docker, MySQL, Php7, Symfony, JS ES6+, jQuery → VueJS 2.6, Bootstrap4, Avocode, Photoshop, AdobeXD, JIRA
         </p>
 
-        <h4>
+        <h4 class="mb-1">
           <a
             href="#"
             type="button"
