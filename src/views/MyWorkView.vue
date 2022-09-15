@@ -112,7 +112,7 @@ import Usetreno from '@/assets/img/logo/usetreno.svg'
             class="mb-2"
           />
         </a>
-        <i>Online comparator for energy products, loans, mortgages, mobile tariffs and much more.<br>9/2017 - 8/2019</i>
+        <i>Online comparator of energy products, loans, mortgages, mobile tariffs and much more.<br>9/2017 - 8/2019</i>
       </div>
       <div class="col-12 col-md-8 col-lg-9">
         <i>
