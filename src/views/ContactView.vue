@@ -24,7 +24,7 @@ import Gmail from '@/assets/img/logo/gmail.svg'
         <a
           id="linkedin"
           class="logo"
-          href="//www.linkedin.com/in/patrik-vodi%C4%8Dka-788799122/"
+          href="//www.linkedin.com/in/patrik-vodicka/"
           target="_blank"
           title="Linked-In"
         >
