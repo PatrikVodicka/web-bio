@@ -3,6 +3,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import viteSvgLoader from 'vite-svg-loader'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import generateSitemap from 'vite-ssg-sitemap'
 
 const sourcePath = fileURLToPath(new URL('./src', import.meta.url))
 
@@ -12,6 +13,9 @@ export default defineConfig({
     viteSvgLoader(),
     vueJsx()
   ],
+  ssgOptions: {
+    onFinished() { generateSitemap() },
+  },
   resolve: {
     alias: {
       '@': sourcePath

@@ -7,4 +7,8 @@ let css = [
   'background: black',
 ].join(';')
 
-export default window.console.log('%c' + msg, css)
+function consoleWelcome () {
+  console.log('%c' + msg, css)
+}
+
+export default consoleWelcome

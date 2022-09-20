@@ -4,7 +4,7 @@
   "version": "1.1.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite-ssg build",
     "preview": "vite preview --port 4173",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
@@ -23,6 +23,8 @@
     "prettier": "^2.7.1",
     "sass": "^1.54.9",
     "vite": "^3.0.9",
+    "vite-ssg": "^0.20.2",
+    "vite-ssg-sitemap": "^0.4.1",
     "vite-svg-loader": "^3.6.0"
   }
 }
