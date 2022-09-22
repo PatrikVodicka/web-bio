@@ -6,7 +6,7 @@ import Gmail from '@/assets/img/logo/gmail.svg'
 </script>
 
 <template>
-  <main class="container wrapper-full-height">
+  <main class="wrapper-full-height container d-flex flex-column justify-content-center">
     <div class="row align-items-center h-100">
 
       <div class="col-6 col-md">

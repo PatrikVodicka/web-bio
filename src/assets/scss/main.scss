@@ -34,9 +34,6 @@ a {
 }
 
 .wrapper-full-height {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   min-height: 100vh;
   height: 100%;
   padding-top: $nav-height;

@@ -5,7 +5,7 @@ import Usetreno from '@/assets/img/logo/usetreno.svg'
 </script>
 
 <template>
-  <main class="container wrapper-full-height align-items-center">
+  <main class="container wrapper-full-height d-flex flex-column justify-content-center align-items-center">
     <article class="row col-10 mt-3">
       <div
         class="col-8 col-md align-self-start mx-auto my-3 text-end"

@@ -11,7 +11,7 @@ import CV from '@/assets/img/icon/CV.svg'
 </script>
 
 <template>
-  <main class="container-fluid wrapper-full-height">
+  <main class="wrapper-full-height container-fluid d-flex flex-column justify-content-center">
     <div class="row justify-content-center align-items-md-center text-center">
       <div class="position-relative order-2 order-md-1 col-12 col-md-8 col-lg-7 col-xl-5 text-md-end">
         <h1 class="my-2">Hello there! I'm Patrik Vodička</h1>
