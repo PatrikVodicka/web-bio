@@ -3,6 +3,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import viteSvgLoader from 'vite-svg-loader'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import pluginRewriteAll from 'vite-plugin-rewrite-all'
 
 const sourcePath = fileURLToPath(new URL('./src', import.meta.url))
 
@@ -10,7 +11,8 @@ export default defineConfig({
   plugins: [
     vue(),
     viteSvgLoader(),
-    vueJsx()
+    vueJsx(),
+    pluginRewriteAll(),
   ],
   resolve: {
     alias: {
