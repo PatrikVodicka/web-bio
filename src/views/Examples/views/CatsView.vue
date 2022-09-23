@@ -4,7 +4,7 @@ import { ref, onMounted } from 'vue'
 const INFINITY_SCROLL_EL_ID = 'infinityScroll'
 
 const intersectionObserver = new IntersectionObserver(entries => {
-  entries[0].isIntersecting && updateCats()
+  updateCats()
 }, {
   threshold: 0.8,
 })
@@ -56,8 +56,8 @@ onMounted( () => {
   <div
     :id="INFINITY_SCROLL_EL_ID"
     :style="{
-        height: '200px'
-      }"
+      height: '300px',
+    }"
   />
 </template>
 
