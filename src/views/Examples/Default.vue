@@ -22,6 +22,7 @@ const CARD_IMG_SIZE = 100
     <a
       class="link-example"
       href="//rgb.cekuj.net"
+      target="_blank"
       title="RGB chart generator"
     >
       <div
