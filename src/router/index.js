@@ -24,17 +24,17 @@ const router = createRouter({
     {
       path: '/examples',
       name: 'examples',
-      component: () => import('@/views/Examples.vue'),
+      component: () => import('@/views/Examples/ExamplesView.vue'),
       children: [
         {
           path: '',
           name: 'default',
-          component: () => import('@/views/Examples/Default.vue')
+          component: () => import('@/views/Examples/views/DefaultView.vue')
         },
         {
           path: 'cats',
           name: 'cats',
-          component: () => import('@/views/Examples/Cats.vue')
+          component: () => import('@/views/Examples/views/CatsView.vue')
         },
       ]
     },
