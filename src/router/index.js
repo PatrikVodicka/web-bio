@@ -24,7 +24,19 @@ const router = createRouter({
     {
       path: '/examples',
       name: 'examples',
-      component: () => import('@/views/Examples.vue')
+      component: () => import('@/views/Examples.vue'),
+      children: [
+        {
+          path: '',
+          name: 'default',
+          component: () => import('@/views/Examples/Default.vue')
+        },
+        {
+          path: 'cats',
+          name: 'cats',
+          component: () => import('@/views/Examples/Cats.vue')
+        },
+      ]
     },
   ]
 })
