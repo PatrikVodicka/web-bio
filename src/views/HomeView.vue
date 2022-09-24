@@ -7,7 +7,7 @@ import Webpack from '@/assets/img/logo/tech/webpack.svg?skipsvgo'
 import Vite from '@/assets/img/logo/tech/vite.svg?skipsvgo'
 import NodeJS from '@/assets/img/logo/tech/nodejs.svg?skipsvgo'
 
-import CV from '@/assets/img/icon/CV.svg'
+import SlicedButton from '@/components/SlicedButton.vue'
 </script>
 
 <template>
@@ -29,15 +29,13 @@ import CV from '@/assets/img/icon/CV.svg'
           <Vite />
           <NodeJS />
         </div>
-        <a
-          class="cv-link mt-3"
-          href="/CV_Patrik_Vodicka.pdf"
-          target="_blank"
-        >
-          <CV
-            class="cv-link__icon"
-          />
-        </a>
+        <SlicedButton
+          btn-to1="/contact"
+          btn-text1="Contact me"
+          btn-href2="/CV_Patrik_Vodicka.pdf"
+          btn-text2="CV"
+          class="cta my-3"
+        />
       </div>
       <div class="order-1 order-md-2 col-12 col-md-4 col-lg-3 col-xl-2 my-4 m-md-0 align-self-end align-self-md-center pe-lg-0">
         <img
@@ -63,22 +61,14 @@ main {
   }
 }
 
-.cv-link {
+.cta {
   display: inline-block;
   opacity: 0;
-  animation: fadeIn 1s 3s ease-out forwards;
+  animation: fadeIn 1s 2s ease-out forwards;
 
   @include media-breakpoint-up(md) {
     position: absolute;
     right: 12px;
-  }
-
-  &__icon {
-    $size: 50px;
-
-    width: $size;
-    height: $size;
-    fill: $white;
   }
 }
 

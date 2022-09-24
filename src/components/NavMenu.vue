@@ -11,7 +11,7 @@ import { RouterLink } from 'vue-router'
   </nav>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 a {
   color: $white;
   text-decoration: none;
