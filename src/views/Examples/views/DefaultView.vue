@@ -25,12 +25,12 @@ const CARD_IMG_SIZE = 100
       target="_blank"
       title="RGB chart generator"
     >
-      <div
-        class="pie-chart"
-        :style="{
-          width: `${CARD_IMG_SIZE}px`,
-          height: `${CARD_IMG_SIZE}px`,
-        }"
+      <img
+        class="rgb-pie-chart"
+        src="/img/rgb-pie-chart.png"
+        :width="CARD_IMG_SIZE"
+        :height="CARD_IMG_SIZE"
+        alt="RGB pie chart"
       />
       <div class="ms-2">
         <h3 class="my-1">RGB chart generator</h3>
@@ -62,29 +62,7 @@ const CARD_IMG_SIZE = 100
   }
 }
 
-.pie-chart {
-  position: relative;
-  background: darkblue;
-  border-radius: 50%;
-  overflow: hidden;
-
-  &:before,
-  &:after {
-    position: absolute;
-    width: 50%;
-    inset: 0;
-    content: "";
-    transform-origin: right;
-  }
-
-  &:before {
-    rotate: 90deg;
-    background: darkred;
-  }
-
-  &:after {
-    rotate: 30deg;
-    background: darkgreen;
-  }
+.rgb-pie-chart {
+  filter: brightness(0.65);
 }
 </style>
