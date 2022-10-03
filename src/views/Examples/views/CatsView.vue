@@ -3,18 +3,19 @@ import { ref, onMounted } from 'vue'
 
 const INFINITY_SCROLL_EL_ID = 'infinityScroll'
 
-const intersectionObserver = new IntersectionObserver(entries => {
+const intersectionObserver = new IntersectionObserver(() => {
   updateCats()
 }, {
-  threshold: 0.8,
+  threshold: 0.1,
 })
 const cats = ref([])
 const catUpdatesCount = ref(0)
 
-async function getCats (urlType, limit) {
-  const apiUrl = urlType ? 'https://api.thecatapi.com/v1/images/search' : 'https://cataas.com/api/cats'
+async function getCats (page, limit = 30) {
+  const apiUrl = 'https://api.thecatapi.com/v1/images/search'
   const apiParams = {
     limit,
+    page,
   }
   const response = await fetch(`${apiUrl}?${new URLSearchParams(apiParams)}`, {
     method: 'GET',
@@ -24,14 +25,9 @@ async function getCats (urlType, limit) {
 }
 
 async function updateCats () {
-  const INIT_LIMIT = 30
-  const UPDATE_LIMIT = 10
   cats.value = [
     ...cats.value,
-    ...await getCats(
-      catUpdatesCount.value % 2 !== 0,
-      catUpdatesCount.value === 0 ? INIT_LIMIT : UPDATE_LIMIT
-    )
+    ...await getCats(catUpdatesCount.value)
   ]
   catUpdatesCount.value++
 }
@@ -48,7 +44,7 @@ onMounted( () => {
       v-for="(cat, index) in cats"
       :key="index"
       :id="cat.id"
-      :src="cat.url || `//cataas.com/cat/${cat.id}`"
+      :src="cat.url"
       :alt="`Cat with id ${cat.id}`"
       loading="lazy"
     >
