@@ -1,10 +1,10 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onDeactivated } from 'vue'
 
 const INFINITY_SCROLL_EL_ID = 'infinityScroll'
 
-const intersectionObserver = new IntersectionObserver(() => {
-  updateCats()
+const intersectionObserver = new IntersectionObserver(entries => {
+  entries[0].isIntersecting && updateCats()
 }, {
   threshold: 0.1,
 })
@@ -35,6 +35,10 @@ async function updateCats () {
 onMounted( () => {
   updateCats()
   intersectionObserver.observe(document.getElementById(INFINITY_SCROLL_EL_ID))
+})
+
+onDeactivated(() => {
+  intersectionObserver.unobserve(document.getElementById(INFINITY_SCROLL_EL_ID))
 })
 </script>
 
