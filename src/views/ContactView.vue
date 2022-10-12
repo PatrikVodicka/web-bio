@@ -47,7 +47,7 @@ import Gmail from '@/assets/img/logo/gmail.svg'
       <div class="col-6 col-md">
         <a
           id="gmail"
-          href="mailto:vodicka.patrik+web-bio@gmail.com"
+          href="mailto:vodicka.patrik@gmail.com"
           class="logo"
           title="Gmail"
         >
