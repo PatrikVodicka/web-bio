@@ -1,39 +1,30 @@
 <script setup>
+import { fetchGet } from '@/services/fetch'
 import { ref, onMounted, onDeactivated } from 'vue'
 
 const INFINITY_SCROLL_EL_ID = 'infinityScroll'
 
 const intersectionObserver = new IntersectionObserver(entries => {
-  entries[0].isIntersecting && updateCats()
+  entries[0].isIntersecting && fetchCats()
 }, {
   threshold: 0.1,
 })
 const cats = ref([])
 const catUpdatesCount = ref(0)
 
-async function getCats (page, limit = 30) {
-  const apiUrl = 'https://api.thecatapi.com/v1/images/search'
-  const apiParams = {
-    limit,
-    page,
-  }
-  const response = await fetch(`${apiUrl}?${new URLSearchParams(apiParams)}`, {
-    method: 'GET',
-  })
-
-  return response.json()
-}
-
-async function updateCats () {
+async function fetchCats () {
   cats.value = [
     ...cats.value,
-    ...await getCats(catUpdatesCount.value)
+    ...await fetchGet('https://api.thecatapi.com/v1/images/search', {
+      page: catUpdatesCount.value,
+      limit: 30,
+    })
   ]
   catUpdatesCount.value++
 }
 
 onMounted( () => {
-  updateCats()
+  fetchCats()
   intersectionObserver.observe(document.getElementById(INFINITY_SCROLL_EL_ID))
 })
 
