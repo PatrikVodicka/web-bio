@@ -1,7 +1,3 @@
-<script setup>
-const CARD_IMG_SIZE = 100
-</script>
-
 <template>
   <div class="wrapper my-5 py-sm-5">
     <router-link
@@ -11,12 +7,43 @@ const CARD_IMG_SIZE = 100
     >
       <img
         class="rounded-circle"
-        :src="`//placekitten.com/${CARD_IMG_SIZE}/${CARD_IMG_SIZE}`"
-        alt="Infinite cats scroll preview"
+        src="//cataas.com/cat/roll"
+        alt="Cute cat image"
       >
       <div class="ms-2">
         <h3 class="my-1">Infinite cats scroll</h3>
         <i>Internet belongs to cats!</i>
+      </div>
+    </router-link>
+    <router-link
+      class="link-example"
+      to="/examples/cat-breeds-catalog"
+      title="Cat breeds game"
+    >
+      <img
+        class="rounded-circle"
+        src="//cataas.com/cat/comfy"
+        alt="Cute cat image"
+      >
+      <div class="ms-2">
+        <h3 class="my-1">Cat breeds catalog</h3>
+        <i>All known cat breeds</i>
+      </div>
+    </router-link>
+    <router-link
+      v-if="false"
+      class="link-example"
+      to="/examples/cat-breeds-game"
+      title="Cat breeds game"
+    >
+      <img
+        class="rounded-circle"
+        src="//cataas.com/cat/fun"
+        alt="Cute cat image"
+      >
+      <div class="ms-2">
+        <h3 class="my-1">Cat breeds game</h3>
+        <i>Guess cat breed!</i>
       </div>
     </router-link>
     <a
@@ -28,8 +55,6 @@ const CARD_IMG_SIZE = 100
       <img
         class="rgb-pie-chart"
         src="/img/rgb-pie-chart.png"
-        :width="CARD_IMG_SIZE"
-        :height="CARD_IMG_SIZE"
         alt="RGB pie chart"
       />
       <div class="ms-2">
@@ -56,6 +81,12 @@ const CARD_IMG_SIZE = 100
   overflow: hidden;
   opacity: 0;
   animation: fadeIn 1s ease-out forwards;
+
+  img {
+    $size: 100px;
+    width: $size;
+    height: $size;
+  }
 
   &:hover {
     text-decoration: none;
