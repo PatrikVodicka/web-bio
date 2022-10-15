@@ -1,12 +1,12 @@
 <script setup>
-import { fetchGet } from '@/services/fetch'
 import { ref, onMounted } from 'vue'
+import { useCatsStore } from '@/stores/cats'
 
 const catBreeds = ref([])
 
 onMounted(async () => {
-  const breeds = await fetchGet('https://api.thecatapi.com/v1/breeds')
-  catBreeds.value = breeds.map(({id, name}) => ({id, name}))
+  await useCatsStore().fetchBreeds()
+  catBreeds.value = useCatsStore().breeds
 })
 </script>
 

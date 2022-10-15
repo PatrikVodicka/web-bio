@@ -36,11 +36,11 @@ const router = createRouter({
           name: 'cat-breeds-catalog',
           component: () => import('@/views/Examples/views/CatBreedsCatalogView.vue')
         },
-        // {
-        //   path: 'cat-breeds-game',
-        //   name: 'cat-breeds-game',
-        //   component: () => import('@/views/Examples/views/CatBreedsGameView.vue')
-        // },
+        {
+          path: 'cat-breeds-game',
+          name: 'cat-breeds-game',
+          component: () => import('@/views/Examples/views/CatBreedsGameView.vue')
+        },
       ]
     },
     {
