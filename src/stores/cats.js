@@ -1,4 +1,4 @@
-import { fetchGet } from '@/services/fetch'
+import { catapiGetBreeds } from '@/services/catapi'
 import { defineStore } from 'pinia'
 
 const BREED_IMAGE_MAP = {
@@ -14,7 +14,7 @@ export const useCatsStore = defineStore({
   actions: {
     async fetchBreeds() {
       if (!this.breeds.length) {
-        const breeds = await fetchGet('https://api.thecatapi.com/v1/breeds')
+        const breeds = await catapiGetBreeds()
         this.breeds = breeds.map(breed =>
           Object.keys(BREED_IMAGE_MAP).includes(breed.id)
             ? { ...breed, image: { url: BREED_IMAGE_MAP[breed.id] } }

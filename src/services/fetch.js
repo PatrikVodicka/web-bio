@@ -1,17 +1,20 @@
 /**
  * Calls API using GET method.
- * @param {String} url EP url
- * @param {Object} params GET params
+ * @param {Object} options
+ * @param {String} options.url EP url
+ * @param {Object} options.params GET params
+ * @param {Object} options.headers request headers
  * @returns {Promise<any>} API response
  */
-async function fetchGet (url, params) {
-  const response = await fetch(`${url}?${new URLSearchParams(params)}`, {
+async function get ({ url, params, headers }) {
+  const response = await fetch(`${url}${params ? '?' : ''}${new URLSearchParams(params)}`, {
     method: 'GET',
+    headers,
   })
 
   return response.json()
 }
 
 export {
-  fetchGet,
+  get as fetchGet,
 }

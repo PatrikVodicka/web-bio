@@ -1,5 +1,5 @@
 <script setup>
-import { fetchGet } from '@/services/fetch'
+import { catapiGetCats } from '@/services/catapi'
 import { ref, onMounted, onDeactivated } from 'vue'
 
 const INFINITY_SCROLL_EL_ID = 'infinityScroll'
@@ -15,7 +15,7 @@ const catUpdatesCount = ref(0)
 async function fetchCats () {
   cats.value = [
     ...cats.value,
-    ...await fetchGet('https://api.thecatapi.com/v1/images/search', {
+    ...await catapiGetCats({
       page: catUpdatesCount.value,
       limit: 30,
     })
