@@ -1,10 +1,10 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onBeforeMount } from 'vue'
 import { useCatsStore } from '@/stores/cats'
 
 const catBreeds = ref([])
 
-onMounted( async () => {
+onBeforeMount( async () => {
   await useCatsStore().fetchBreeds()
   catBreeds.value = useCatsStore().breeds
 })
@@ -25,6 +25,7 @@ onMounted( async () => {
           :id="breed.id"
           :src="breed?.image?.url || '//placekitten.com/300/300'"
           :alt="breed.name"
+          loading="eager"
         />
         <span
           class="item__name"
@@ -52,6 +53,7 @@ onMounted( async () => {
 .wrapper {
   text-align: center;
   min-height: 100vh;
+  animation: fadeIn 1s ease-out forwards;
 }
 
 .item {
@@ -78,7 +80,7 @@ onMounted( async () => {
       padding: 15px;
       overflow-y: auto;
       margin: 0;
-      background: rgba(255,255,255,0.3);
+      background: adjust-color($white, $alpha: -0.7);
       color: $white;
       transform: rotateY(-180deg);
     }

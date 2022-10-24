@@ -9,6 +9,7 @@ async function getBreeds () {
   return await fetchGet({
     url: url + 'breeds',
     headers,
+    hasRecall: true,
   })
 }
 
@@ -17,6 +18,7 @@ async function getCats (params) {
     url: url + 'images/search',
     params,
     headers,
+    hasRecall: true,
   })
 }
 

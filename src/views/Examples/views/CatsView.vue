@@ -1,5 +1,5 @@
 <script setup>
-import { catapiGetCats } from '@/services/catapi'
+import { catapiGetCats } from '@/services/api/catapi'
 import { ref, onMounted, onDeactivated } from 'vue'
 
 const INFINITY_SCROLL_EL_ID = 'infinityScroll'

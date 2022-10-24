@@ -31,7 +31,6 @@
       </div>
     </router-link>
     <router-link
-      v-if="false"
       class="link-example"
       to="/examples/cat-breeds-game"
       title="Cat breeds game"
