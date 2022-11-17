@@ -30,11 +30,19 @@ import SlicedButton from '@/components/SlicedButton.vue'
           <NodeJS />
         </div>
         <SlicedButton
-          btn-to1="/contact"
-          btn-text1="Contact me"
-          btn-href2="/CV_Patrik_Vodicka.pdf"
-          btn-text2="CV"
           class="cta my-3"
+          :buttons="[
+            {
+              to: '/contact',
+              text: 'Contact me',
+            },
+            {
+              entity: 'a',
+              href: '/CV_Patrik_Vodicka.pdf',
+              text: 'CV',
+              target: '_blank',
+            },
+          ]"
         />
       </div>
       <div class="order-1 order-md-2 col-12 col-md-4 col-lg-3 col-xl-2 my-4 m-md-0 align-self-end align-self-md-center pe-lg-0">

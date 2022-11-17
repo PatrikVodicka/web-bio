@@ -16,7 +16,9 @@ async function get ({ url, params, headers , hasRecall}) {
     })
   } catch (e) {
     console.error(e)
-    hasRecall && await get({ url, params, headers, hasRecall })
+    if (hasRecall) {
+      return await get({ url, params, headers, hasRecall })
+    }
   }
 
   return response.json()

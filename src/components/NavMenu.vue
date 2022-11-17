@@ -53,8 +53,13 @@ a {
       text-decoration: none;
     }
 
-    &:hover:after {
-      width: 100%;
+    &:hover,
+    &:focus-within {
+      color: inherit;
+
+      &:after {
+        width: 100%;
+      }
     }
   }
 

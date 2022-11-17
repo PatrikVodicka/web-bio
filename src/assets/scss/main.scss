@@ -23,7 +23,8 @@ a {
   color: $sw-yellow;
   text-decoration: none;
 
-  &:hover {
+  &:hover,
+  &:focus-within {
     color: $sw-yellow;
     text-decoration: underline;
   }
@@ -39,4 +40,17 @@ a {
   height: 100%;
   padding-top: $nav-height;
   padding-bottom: $nav-height;
+}
+
+.btn {
+  color: $white;
+  cursor: pointer;
+  background-color: transparent;
+  transition: background-color 0.15s ease-in, color 0.15s ease-in;
+
+  &:hover,
+  &:focus-within {
+    color: $sw-yellow;
+    background-color: adjust-color($sw-blue, $alpha: -0.6);
+  }
 }

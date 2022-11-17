@@ -60,7 +60,8 @@ function resetBreedOptions () {
   ])
 
   catBreedOptionsUpdate(options => {
-    options[getRandomNumberInInterval(0, options.length - 1)] = randomCat.value.breed
+    const randomArrayIndex = getRandomNumberInInterval(0, options.length - 1)
+    options[randomArrayIndex] = randomCat.value.breed
   })
 }
 
@@ -106,7 +107,7 @@ onBeforeMount(async () => {
 
 <template>
   <section class="wrapper-game">
-    <h1>Which breed does this cute cat belong to?</h1>
+    <h1 class="mt-0">Which breed does this cute cat belong to?</h1>
     <div
       v-if="randomCat"
       class="cat-preview"
@@ -121,7 +122,7 @@ onBeforeMount(async () => {
       <button
         v-for="(breed, index) in catBreedOptions"
         :class="[
-          'cat-breed-option',
+          'btn cat-breed-option',
           breed?.highlight,
         ]"
         :key="index"
@@ -131,10 +132,17 @@ onBeforeMount(async () => {
     </div>
     <h2>Score {{ gameScore }}</h2>
     <sliced-button
-      btn-text1="Reset"
-      btn-href1="/examples/cat-breeds-game"
-      btn-text2="Cat catalog"
-      btn-to2="/examples/cat-breeds-catalog"
+      :buttons="[
+        {
+          entity: 'button',
+          text: 'Reset',
+          click: resetGame,
+        },
+        {
+          text: 'Cat catalog',
+          to: '/examples/cat-breeds-catalog',
+        },
+      ]"
     />
   </section>
 </template>
@@ -174,19 +182,10 @@ onBeforeMount(async () => {
   flex: 1;
   margin: 10px 0;
   padding: 10px;
-  background: none;
   border: 2px solid $white;
-  color: $white;
-  cursor: pointer;
 
   @include media-breakpoint-up(sm) {
     margin: 10px;
-  }
-
-  &:hover {
-    text-decoration: none;
-    color: $sw-yellow;
-    background-color: adjust-color($sw-blue, $alpha: -0.6);
   }
 
   &.good {
