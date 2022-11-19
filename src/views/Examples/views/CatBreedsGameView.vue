@@ -2,6 +2,7 @@
 import SlicedButton from '@/components/SlicedButton.vue'
 import { catapiGetCats } from '@/services/api/catapi'
 import { useImmer } from '@/services/immer'
+import { getRandomNumberInInterval, getRandomItems } from '@/utils/random'
 import { ref, onBeforeMount } from 'vue'
 import { useCatsStore } from '@/stores/cats'
 
@@ -30,16 +31,7 @@ async function fetchRandomCat () {
   }
   delete response.breeds
   randomCat.value = response
-}
-
-/**
- * Returns random from interval with both arguments included.
- * @param min {Number}
- * @param max {Number}
- * @returns {Number}
- */
-function getRandomNumberInInterval(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) ) + min;
+  resetBreedOptions()
 }
 
 /**
@@ -47,17 +39,8 @@ function getRandomNumberInInterval(min, max) {
  */
 function resetBreedOptions () {
   const breeds = useCatsStore().getBreedNames.filter(breed => breed.id !== randomCat.value.breed.id)
-  const maxRandom = breeds.length
 
-  const a = getRandomNumberInInterval(1, maxRandom - 1)
-  const b = getRandomNumberInInterval(a + 1, maxRandom)
-  const c = getRandomNumberInInterval(0, a - 1)
-
-  catBreedOptionsUpdate(() => [
-    breeds[a],
-    breeds[b],
-    breeds[c],
-  ])
+  catBreedOptionsUpdate(() => getRandomItems(breeds, 3))
 
   catBreedOptionsUpdate(options => {
     const randomArrayIndex = getRandomNumberInInterval(0, options.length - 1)
@@ -66,24 +49,17 @@ function resetBreedOptions () {
 }
 
 /**
- * Resets random cat and breed options.
- * @returns {Promise<void>}
- */
-async function resetCat () {
-  await fetchRandomCat()
-  resetBreedOptions()
-}
-
-/**
  * Reset whole game.
  * @returns {Promise<void>}
  */
 async function resetGame () {
   gameScore.value = 0
-  await resetCat()
+  await fetchRandomCat()
 }
 
-async function handleOptionSelect (option, index) {
+async function handleOptionSelect ({ target }, option, index) {
+  target.blur()
+
   const isOptionCorrect = option.id === randomCat.value.breed.id
   catBreedOptionsUpdate(options => {
     options[index].highlight = isOptionCorrect ? 'good' : 'bad'
@@ -95,13 +71,13 @@ async function handleOptionSelect (option, index) {
   }
 
   gameScore.value++
-  await resetCat()
+  await fetchRandomCat()
 }
 
 onBeforeMount(async () => {
   await useCatsStore().fetchBreeds()
   catBreeds.value = useCatsStore().getBreedNames
-  await resetCat()
+  await fetchRandomCat()
 })
 </script>
 
@@ -127,7 +103,7 @@ onBeforeMount(async () => {
         ]"
         :key="index"
         v-text="breed.name"
-        @click="handleOptionSelect(breed, index)"
+        @click="event => handleOptionSelect(event, breed, index)"
       />
     </div>
     <h2>Score {{ gameScore }}</h2>
