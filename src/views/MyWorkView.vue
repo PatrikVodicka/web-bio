@@ -27,7 +27,7 @@ import Usetreno from '@/assets/img/logo/usetreno.svg'
 
         <h4 class="mb-1">Tech stack</h4>
         <p class="my-0">
-          Docker, MongoDB, Php7, Nette/Latte, NodeJS, jQuery, VueJS 2.6 → 3,
+          Docker, MariaDb, Php7+, Nette/Latte, NodeJS, jQuery, VueJS 2.6 → 3,
           Typescript, JS ES6+, Testcafe → Cypress, Jest → Vitest, Storybook,
           Figma, AdobeXD, Inkscape, JIRA + Confluence
         </p>
